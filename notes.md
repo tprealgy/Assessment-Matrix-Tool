@@ -2,6 +2,7 @@
 
 ## TODO
 
+* Remove data folder when build? 
 * Prepare for github
 
 ## Chat recommendations
