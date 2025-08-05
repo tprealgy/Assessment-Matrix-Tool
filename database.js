@@ -115,9 +115,11 @@ class Database {
     // Create indexes for better performance
     const indexes = [
       'CREATE INDEX IF NOT EXISTS idx_students_course ON students (course_id)',
-      'CREATE INDEX IF NOT EXISTS idx_assessment_areas_course ON assessment_areas (course_id)',
-      'CREATE INDEX IF NOT EXISTS idx_assignments_student ON assignments (student_id)',
-      'CREATE INDEX IF NOT EXISTS idx_grades_student ON grades (student_id)'
+      'CREATE INDEX IF NOT EXISTS idx_students_course_visible ON students (course_id, hidden)',
+      'CREATE INDEX IF NOT EXISTS idx_assessment_areas_course_order ON assessment_areas (course_id, sort_order)',
+      'CREATE INDEX IF NOT EXISTS idx_assignments_student_area ON assignments (student_id, assessment_area_id)',
+      'CREATE INDEX IF NOT EXISTS idx_assignments_created ON assignments (created_at DESC)',
+      'CREATE INDEX IF NOT EXISTS idx_grades_student_area ON grades (student_id, assessment_area_id)'
     ];
 
     for (const index of indexes) {

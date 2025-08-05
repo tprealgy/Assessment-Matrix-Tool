@@ -1,0 +1,38 @@
+/* Main CSS File - Imports all modular components */
+
+/* Utilities (must be first) */
+@import url('./utilities/variables.css');
+@import url('./utilities/base.css');
+
+/* Components */
+@import url('./components/buttons.css');
+@import url('./components/forms.css');
+@import url('./components/tables.css');
+@import url('./components/assignments.css');
+@import url('./components/modals.css');
+@import url('./components/navigation.css');
+@import url('./components/notifications.css');
+
+/* Pages */
+@import url('./pages/admin.css');
+@import url('./pages/settings.css');
+
+/* Legacy compatibility - remove these as components are migrated */
+.item-list input {
+  flex-grow: 1;
+  margin-right: var(--spacing-md);
+  border: 1px solid #ccc;
+}
+
+#areaList button {
+  margin-left: var(--spacing-xs);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-size: 1.2rem;
+  line-height: 1;
+  background-color: transparent;
+  color: var(--text-muted);
+}
+
+.item-list button:hover {
+  background-color: var(--gray-300);
+}

@@ -1,0 +1,47 @@
+/* Base Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: var(--spacing-xl);
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+}
+
+h1, h2 {
+  color: var(--text-primary);
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--spacing-xl);
+  border-bottom: 2px solid var(--gray-200);
+  padding-bottom: var(--spacing-md);
+}
+
+/* Navigation */
+nav {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+nav a, .nav-link {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: bold;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+nav a:hover, .nav-link:hover {
+  background-color: var(--gray-200);
+}
+
+/* Basic Form Elements */
+input, select, button {
+  padding: var(--spacing-sm);
+  margin: var(--spacing-sm) 0;
+  font-size: 1rem;
+}

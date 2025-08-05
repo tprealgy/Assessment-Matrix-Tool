@@ -1,6 +1,6 @@
 {
   "name": "assessment-matrix-tool",
-  "version": "2.1.0",
+  "version": "0.9.0-beta",
   "description": "A desktop application for managing student assessments and grading matrices",
   "main": "electron.js",
   "scripts": {
@@ -33,6 +33,7 @@
     },
     "files": [
       "**/*",
+      "!data/**/*",
       "!data_backup_*/**/*",
       "!backup/**/*",
       "!dist/**/*",
@@ -45,13 +46,7 @@
       "electron-server.js",
       "electron.js"
     ],
-    "extraResources": [
-      {
-        "from": "data",
-        "to": "../data",
-        "filter": ["**/*"]
-      }
-    ],
+
     "win": {
       "target": "portable",
       "forceCodeSigning": false

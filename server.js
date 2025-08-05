@@ -510,6 +510,42 @@ app.post('/api/students/:id/grade', async (req, res) => {
   }
 });
 
+// Batch grades endpoint for performance
+app.post('/api/students/:id/grades/batch', async (req, res) => {
+  const courseName = req.query.course;
+  const { updates } = req.body;
+  const studentId = req.params.id;
+  if (!courseName) return res.status(400).json({ error: 'Course name is required' });
+  if (!updates || !Array.isArray(updates)) return res.status(400).json({ error: 'Updates array is required' });
+
+  try {
+    const course = await database.get('SELECT id FROM courses WHERE name = ?', [courseName]);
+    if (!course) return res.status(404).json({ error: 'Course not found' });
+
+    for (const update of updates) {
+      const { areaIndex, level, gradeColor } = update;
+      const area = await database.get(`
+        SELECT id FROM assessment_areas 
+        WHERE course_id = ? 
+        ORDER BY sort_order 
+        LIMIT 1 OFFSET ?
+      `, [course.id, areaIndex]);
+
+      if (area) {
+        await database.run(
+          'INSERT OR REPLACE INTO grades (student_id, assessment_area_id, level, grade_color) VALUES (?, ?, ?, ?)',
+          [studentId, area.id, level, gradeColor]
+        );
+      }
+    }
+
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Failed to batch grade assignments:', error);
+    res.status(500).json({ error: 'Could not grade assignments.' });
+  }
+});
+
 
 
 // Deleted students route

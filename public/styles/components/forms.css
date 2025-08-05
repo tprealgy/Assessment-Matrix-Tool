@@ -1,0 +1,106 @@
+/* Form Components */
+.form-section {
+  padding: var(--spacing-xl);
+  border-top: 1px solid var(--gray-200);
+}
+
+.form-section h3 {
+  margin: 0 0 var(--spacing-lg) 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.form-group {
+  margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 500;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--spacing-md);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  background: var(--bg-primary);
+}
+
+.form-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: var(--spacing-md);
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  font-size: 1rem;
+  font-family: inherit;
+  resize: vertical;
+  transition: all var(--transition-fast);
+  box-sizing: border-box;
+  background: var(--bg-primary);
+}
+
+.form-textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.input-group {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: flex-end;
+}
+
+.input-group .form-input {
+  flex: 1;
+}
+
+/* Color Input */
+.color-input {
+  width: 100%;
+  height: 50px;
+  border: 2px solid var(--gray-200);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.color-input:hover {
+  border-color: var(--primary-color);
+}
+
+.color-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* File Input */
+.file-input {
+  flex: 1;
+  padding: 0.75rem;
+  border: 2px dashed var(--success-color);
+  border-radius: var(--radius-md);
+  background: rgba(40, 167, 69, 0.05);
+  font-size: 0.95rem;
+}
+
+.file-input:focus {
+  border-color: var(--success-light);
+  outline: none;
+}

@@ -150,6 +150,6 @@ For technical support, training, or questions:
 
 ---
 
-**Version**: 2.1.0  
+**Version**: 0.9.0-beta  
 **Last Updated**: January 2025  
 **Compatibility**: Windows 10/11

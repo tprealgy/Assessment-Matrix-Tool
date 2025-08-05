@@ -1,0 +1,59 @@
+/* Navigation Components */
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  font-size: 0.9rem;
+}
+
+.breadcrumb-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: 3px;
+  transition: background-color var(--transition-fast);
+}
+
+.breadcrumb-link:hover {
+  background-color: var(--gray-200);
+}
+
+.breadcrumb-separator {
+  color: var(--text-muted);
+  font-weight: normal;
+}
+
+.breadcrumb-current {
+  color: var(--text-primary);
+  font-weight: bold;
+  padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Help Icon */
+.help-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(52, 152, 219, 0.3);
+  transition: all var(--transition-fast);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.help-icon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+}

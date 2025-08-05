@@ -2,7 +2,7 @@
 
 All notable changes to the Assessment Matrix Tool will be documented in this file.
 
-## [2.1.0] - 2025-01-15
+## [0.9.0-beta] - 2025-01-15
 
 ### ✨ New Features
 - **Undo Last Assignment**: Added ability to undo the most recently created assignment for a student
@@ -34,7 +34,7 @@ All notable changes to the Assessment Matrix Tool will be documented in this fil
 
 ---
 
-## [2.0.0] - 2025-08-05
+## [0.8.0-beta] - 2025-08-05
 
 ### 🚀 Major Changes
 - **SQLite Migration**: Migrated from JSON file storage to SQLite database for better performance and data integrity
@@ -75,7 +75,7 @@ All notable changes to the Assessment Matrix Tool will be documented in this fil
 
 ---
 
-## [1.0.0] - Previous Version
+## [0.1.0-alpha] - Previous Version
 
 ### Initial Features
 - Basic assessment matrix functionality

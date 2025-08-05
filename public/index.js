@@ -13,22 +13,42 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize breadcrumb
   initBreadcrumb('index', courseName);
 
-  // Application logic
+  // Application logic with caching
   let assessmentAreas = [];
+  let students = [];
   let currentStudent = null;
   let currentStudentId = null;
+  let lastStudentsLoad = 0;
+  let lastAreasLoad = 0;
+  const CACHE_DURATION = 30000; // 30 seconds
 
-  async function loadAssessmentAreas() {
+  async function loadAssessmentAreas(forceReload = false) {
+    const now = Date.now();
+    if (!forceReload && assessmentAreas.length > 0 && (now - lastAreasLoad) < CACHE_DURATION) {
+      return; // Use cached data
+    }
+    
     const res = await fetch(`/api/assessment-areas?course=${courseName}`);
     assessmentAreas = await res.json();
+    lastAreasLoad = now;
   }
 
-  async function loadStudents() {
+  async function loadStudents(forceReload = false) {
+    const now = Date.now();
+    if (!forceReload && students.length > 0 && (now - lastStudentsLoad) < CACHE_DURATION) {
+      return; // Use cached data
+    }
+    
     const res = await fetch(`/api/students?course=${courseName}`);
-    let students = await res.json();
+    students = await res.json();
     students = students.filter(student => !student.hidden);
     students.sort((a, b) => a.name.localeCompare(b.name, 'sv'));
-
+    lastStudentsLoad = now;
+    
+    updateStudentSelect();
+  }
+  
+  function updateStudentSelect() {
     const select = document.getElementById('studentSelect');
     select.innerHTML = '<option value="">-- Välj en student --</option>';
     students.forEach(student => {
@@ -288,23 +308,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       }
 
-      const updatePromises = [];
+      const gradeUpdates = [];
       levels.forEach(l => {
         if (newGrades[l] !== currentGrades[l]) {
-          updatePromises.push(fetch(`/api/students/${currentStudentId}/grade?course=${courseName}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              areaIndex: parseInt(target.dataset.areaIndex),
-              level: l,
-              gradeColor: newGrades[l]
-            })
-          }));
+          gradeUpdates.push({
+            areaIndex: parseInt(target.dataset.areaIndex),
+            level: l,
+            gradeColor: newGrades[l]
+          });
         }
       });
 
-      await Promise.all(updatePromises);
-      if (updatePromises.length > 0) {
+      if (gradeUpdates.length > 0) {
+        await fetch(`/api/students/${currentStudentId}/grades/batch?course=${courseName}`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ updates: gradeUpdates })
+        });
         loadStudentData(currentStudentId);
       }
       return;
