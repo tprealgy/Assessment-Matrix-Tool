@@ -58,23 +58,17 @@ Assessment Matrix Tool/
 
 ## 🔄 Updating the Application
 
-### When a New Version is Released:
+**📋 For detailed update instructions, see [UPDATE_GUIDE.md](UPDATE_GUIDE.md)**
 
-1. **📥 Download** the new version
-2. **❌ Close** the current app completely
-3. **📂 Navigate** to your app folder (in OneDrive)
-4. **🔄 Replace ONLY** the `Assessment Matrix Tool.exe` file
-5. **✅ Keep** the `data/` folder (contains all your work)
-6. **▶️ Start** the updated app
-7. **✔️ Verify** your courses and students are still there
+### Quick Update Summary:
+1. **📥 Download** only the new `Assessment Matrix Tool.exe` file
+2. **❌ Close** the current app completely  
+3. **🔄 Replace** only the `.exe` file in your app folder
+4. **▶️ Start** the updated app
+
+**✅ Your data stays 100% safe** - courses, students, and grades are preserved!
 
 **⚠️ Never replace the entire folder** - you'll lose all your data!
-
-### Update Checklist:
-- [ ] App is completely closed
-- [ ] Only .exe file is replaced
-- [ ] Data folder is untouched
-- [ ] App starts and shows your courses
 
 ## 🎯 How to Use the Assessment Matrix
 
