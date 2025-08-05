@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Välj kurs</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="landing.css" />
+  <script src="breadcrumb.js"></script>
+  <script src="landing.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div>
+        <h1>Välj en kurs</h1>
+        <nav></nav>
+      </div>
+      <button class="create-course-btn" id="open-modal-btn">Skapa kurs</button>
+    </div>
+    <div id="course-selection">
+      <ul id="course-list">
+        <!-- Kurser listas här -->
+      </ul>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div id="course-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2>Skapa ny kurs</h2>
+      <div class="modal-form">
+        <input type="text" id="new-course-name" placeholder="Namn på ny kurs" />
+        <button id="create-course-btn">Skapa kurs</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

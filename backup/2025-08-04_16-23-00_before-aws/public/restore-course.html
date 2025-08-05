@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Återställ Kurs</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Återställ Raderad Kurs</h1>
+        <nav>
+            <a href="/landing.html">Tillbaka till kurslistan</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Raderade Kurser</h2>
+        <p>Här är en lista över kurser som har raderats. Du kan återställa dem till systemet.</p>
+        <table class="restore-table">
+            <thead>
+                <tr>
+                    <th>Kursnamn</th>
+                    <th>Åtgärd</th>
+                </tr>
+            </thead>
+            <tbody id="deletedList">
+                <!-- Listan fylls av JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        const deletedList = document.getElementById('deletedList');
+
+        async function loadDeletedCourses() {
+            const res = await fetch('/api/deleted-courses');
+            const courses = await res.json();
+
+            deletedList.innerHTML = '';
+
+            if (courses.length === 0) {
+                deletedList.innerHTML = '<tr><td colspan="2">Inga raderade kurser att visa.</td></tr>';
+                return;
+            }
+
+            courses.forEach(course => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${course}</td>
+                    <td>
+                        <button class="restore-btn" data-course="${course}">Återställ</button>
+                    </td>
+                `;
+                deletedList.appendChild(tr);
+            });
+        }
+
+        deletedList.addEventListener('click', async (e) => {
+            if (!e.target.matches('.restore-btn')) return;
+
+            const btn = e.target;
+            const courseName = btn.dataset.course;
+
+            if (confirm(`Är du säker på att du vill återställa kursen "${courseName}"?`)) {
+                const res = await fetch('/api/courses/restore', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ courseName })
+                });
+
+                if (res.ok) {
+                    alert('Kursen har återställts!');
+                    loadDeletedCourses(); // Refresh the list
+                } else {
+                    const { error } = await res.json();
+                    alert(`Kunde inte återställa kursen: ${error}`);
+                }
+            }
+        });
+
+        loadDeletedCourses();
+    </script>
+</body>
+</html>

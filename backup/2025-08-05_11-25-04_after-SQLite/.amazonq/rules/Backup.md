@@ -1,0 +1,1 @@
+The folder "backup" contains backups of the app. No changes should ever be done to any files in this folder. The files can be read if needed. 

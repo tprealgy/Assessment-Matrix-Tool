@@ -1,0 +1,177 @@
+.course-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  margin-bottom: 0.5rem;
+}
+
+#course-list li {
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e9ecef;
+  transition: all 0.2s ease;
+  color: #2c3e50;
+  font-size: 1.1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.course-card-link:nth-child(even) li {
+  background: #f1f3f4;
+}
+
+.course-card-link:hover li {
+  border-color: #3498db;
+  box-shadow: 0 2px 8px rgba(52, 152, 219, 0.1);
+  color: #3498db;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.close:hover {
+  color: #000;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.modal-form input {
+  padding: 0.75rem;
+  border: 2px solid #bdc3c7;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.modal-form button {
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.modal-form button:hover {
+  background-color: #27ae60;
+}
+
+.settings-modal {
+  max-width: 600px;
+  width: 95%;
+}
+
+.settings-content {
+  margin-top: 1rem;
+}
+
+.settings-content h3 {
+  margin-bottom: 1rem;
+  color: #2c3e50;
+}
+
+.cleanup-info {
+  font-size: 0.9rem;
+  color: #6c757d;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.deleted-course-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  margin-bottom: 0.5rem;
+  background-color: #f8f9fa;
+  border-radius: 5px;
+  border: 1px solid #dee2e6;
+}
+
+.deleted-course-info {
+  flex-grow: 1;
+}
+
+.deleted-course-name {
+  font-weight: bold;
+  color: #495057;
+  margin-bottom: 0.25rem;
+}
+
+.deleted-course-date {
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.expiration-warning {
+  font-size: 0.75rem;
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.deleted-course-item.expires-soon {
+  border-left: 4px solid #dc3545;
+  background-color: #fff5f5;
+}
+
+.warning-icon {
+  color: #dc3545;
+  margin-right: 0.25rem;
+}
+
+.restore-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.restore-btn:hover {
+  background-color: #218838;
+}
+
+.no-deleted-courses {
+  text-align: center;
+  color: #6c757d;
+  font-style: italic;
+  padding: 2rem;
+}

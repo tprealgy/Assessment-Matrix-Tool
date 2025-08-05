@@ -1,0 +1,24 @@
+[
+  {
+    "id": "5ebe8f57-d227-4081-9c2c-c382afd057e8",
+    "name": "ddddd",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "aa",
+            "color": "green",
+            "createdAt": "2025-08-04T11:45:45.550Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  }
+]

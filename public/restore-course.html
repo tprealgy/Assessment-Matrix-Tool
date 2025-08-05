@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Återställ Kurs</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="electron-fix.js"></script>
+    <script src="restore-course.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Återställ Raderad Kurs</h1>
+        <nav>
+            <a href="/landing.html">Tillbaka till kurslistan</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Raderade Kurser</h2>
+        <p>Här är en lista över kurser som har raderats. Du kan återställa dem till systemet.</p>
+        <table class="restore-table">
+            <thead>
+                <tr>
+                    <th>Kursnamn</th>
+                    <th>Åtgärd</th>
+                </tr>
+            </thead>
+            <tbody id="deletedList">
+                <!-- Listan fylls av JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+
+</body>
+</html>

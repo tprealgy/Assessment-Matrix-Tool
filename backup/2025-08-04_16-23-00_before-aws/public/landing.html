@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Välj kurs</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f4f7f6;
+    }
+    main {
+      width: 100%;
+      max-width: 500px;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    #course-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    #course-list li {
+      margin-bottom: 1rem;
+    }
+    #course-list a {
+      display: block;
+      padding: 1rem 1.5rem;
+      background-color: #ecf0f1;
+      color: #2c3e50;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: all 0.2s ease;
+    }
+    #course-list a:hover {
+      background-color: #3498db;
+      color: white;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+    }
+    #create-course {
+      margin-top: 2rem;
+      border-top: 2px solid #ecf0f1;
+      padding-top: 2rem;
+      display: flex;
+      gap: 1rem;
+    }
+    #new-course-name {
+      flex-grow: 1;
+      border: 2px solid #bdc3c7;
+      border-radius: 5px;
+    }
+    #create-course-btn {
+      background-color: #2ecc71;
+    }
+    #create-course-btn:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Välj en kurs</h1>
+      <nav>
+        <a href="/restore-course.html">Återställ kurs</a>
+      </nav>
+    </header>
+    <div id="course-selection">
+      <ul id="course-list">
+        <!-- Kurser listas här -->
+      </ul>
+    </div>
+    <div id="create-course">
+      <input type="text" id="new-course-name" placeholder="Namn på ny kurs" />
+      <button id="create-course-btn">Skapa</button>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const courseList = document.getElementById('course-list');
+      const newCourseNameInput = document.getElementById('new-course-name');
+      const createCourseBtn = document.getElementById('create-course-btn');
+
+      async function fetchCourses() {
+        try {
+            const response = await fetch('/api/courses');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            const courses = await response.json();
+            courseList.innerHTML = '';
+            courses.forEach(course => {
+              const li = document.createElement('li');
+              
+              const link = document.createElement('a');
+              link.href = `/index.html?course=${encodeURIComponent(course.name)}`;
+              link.textContent = course.displayName;
+              if (course.color) {
+                link.style.backgroundColor = course.color;
+                link.style.color = 'white'; // Ensure text is readable on colored background
+              }
+              li.appendChild(link);
+
+              courseList.appendChild(li);
+            });
+        } catch (error) {
+            console.error("Could not fetch courses:", error);
+            courseList.innerHTML = '<li>Kunde inte ladda kurser.</li>';
+        }
+      }
+
+      createCourseBtn.addEventListener('click', async () => {
+        const newCourseName = newCourseNameInput.value.trim();
+        if (newCourseName) {
+          const response = await fetch('/api/courses', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ courseName: newCourseName }),
+          });
+          if (response.ok) {
+            newCourseNameInput.value = '';
+            fetchCourses();
+          } else {
+            alert('Kunde inte skapa kurs.');
+          }
+        }
+      });
+
+      fetchCourses();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "id": "4c70328e-1a01-492f-b65b-3d717fd5da7d",
+  "name": "deleteme",
+  "assignments": [
+    {
+      "E": [
+        {
+          "name": "a",
+          "color": "green"
+        }
+      ],
+      "C": [
+        {
+          "name": "a",
+          "color": "green"
+        }
+      ],
+      "A": [
+        {
+          "name": "a",
+          "color": "green"
+        }
+      ]
+    }
+  ]
+}

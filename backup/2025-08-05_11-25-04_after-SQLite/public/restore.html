@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Återställ Student</title>
+    <link rel="stylesheet" href="/style.css">
+    <script src="config.js"></script>
+    <script src="utils/api.js">
+    <script src="utils/validation.js"></script>
+    <script src="utils/ui.js"></script>
+    <script src="data/students.js"></script>
+    <script src="breadcrumb.js"></script>
+    <script src="help.js"></script>
+    <script src="restore.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Återställ Raderad Student</h1>
+        <nav>
+
+
+        </nav>
+    </header>
+    <div class="admin-main" style="grid-template-columns: 1fr;">
+        <div class="admin-card">
+            <div class="card-header">
+                <h2>🔄 Raderade Studenter</h2>
+            </div>
+            <div class="form-section">
+                <p>Här är en lista över studenter som har raderats. Du kan återställa dem till systemet.</p>
+                <table class="restore-table">
+                    <thead>
+                        <tr>
+                            <th>Namn</th>
+                            <th>Raderad</th>
+                            <th>Åtgärd</th>
+                        </tr>
+                    </thead>
+                    <tbody id="deletedList">
+                        <!-- Listan fylls av JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

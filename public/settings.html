@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inställningar</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script src="utils/ui.js"></script>
+  <script src="breadcrumb.js"></script>
+  <script src="help.js"></script>
+  <script src="electron-fix.js"></script>
+  <script src="settings.js"></script>
+</head>
+<body>
+  <header>
+    <h1>⚙️ Appinställningar</h1>
+    <nav></nav>
+  </header>
+
+  <div class="admin-main" style="grid-template-columns: 1fr;">
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>🎨 Färginställningar</h2>
+      </div>
+      <div class="form-section">
+        <div class="form-group">
+          <label>Bedömningsfärger</label>
+          <div class="color-config-grid">
+            <div class="color-config-item">
+              <label>Grön (Godkänd)</label>
+              <input type="color" id="color-green" class="color-input">
+            </div>
+            <div class="color-config-item">
+              <label>Gul (Delvis)</label>
+              <input type="color" id="color-yellow" class="color-input">
+            </div>
+            <div class="color-config-item">
+              <label>Röd (Ej godkänd)</label>
+              <input type="color" id="color-red" class="color-input">
+            </div>
+            <div class="color-config-item">
+              <label>Grå (Ej bedömd)</label>
+              <input type="color" id="color-grey" class="color-input">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>📏 Gränsvärden</h2>
+      </div>
+      <div class="form-section">
+        <div class="form-group">
+          <label for="limit-student">Max längd studentnamn</label>
+          <input type="number" id="limit-student" class="form-input" min="10" max="200">
+        </div>
+        <div class="form-group">
+          <label for="limit-course">Max längd kursnamn</label>
+          <input type="number" id="limit-course" class="form-input" min="10" max="200">
+        </div>
+        <div class="form-group">
+          <label for="limit-assignment">Max längd uppgiftsnamn</label>
+          <input type="number" id="limit-assignment" class="form-input" min="10" max="500">
+        </div>
+        <div class="form-group">
+          <label for="limit-area">Max längd områdesnamn</label>
+          <input type="number" id="limit-area" class="form-input" min="10" max="300">
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>🔧 Beteendeinställningar</h2>
+      </div>
+      <div class="form-section">
+        <div class="form-group">
+          <label for="toast-duration">Notifikationstid (ms)</label>
+          <input type="number" id="toast-duration" class="form-input" min="1000" max="10000" step="500">
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="confirm-deletions"> Bekräfta borttagningar
+          </label>
+        </div>
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="show-tooltips"> Visa verktygstips
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>💾 Hantera inställningar</h2>
+      </div>
+      <div class="form-section">
+        <div style="display: flex; gap: 1rem; justify-content: center;">
+          <button id="save-settings" class="btn btn-success">Spara inställningar</button>
+          <button id="reset-settings" class="btn btn-danger">Återställ till standard</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

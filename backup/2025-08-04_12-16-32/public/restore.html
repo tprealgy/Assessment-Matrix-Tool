@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Återställ Student</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Återställ Raderad Student</h1>
+        <nav>
+            <a href="/admin.html">Tillbaka till Admin</a>
+        </nav>
+    </header>
+    <main>
+        <h2>Raderade Studenter</h2>
+        <p>Här är en lista över studenter som har raderats. Du kan återställa dem till systemet.</p>
+        <table class="restore-table">
+            <thead>
+                <tr>
+                    <th>Namn</th>
+                    <th>Raderad</th>
+                    <th>Åtgärd</th>
+                </tr>
+            </thead>
+            <tbody id="deletedList">
+                <!-- Listan fylls av JavaScript -->
+            </tbody>
+        </table>
+    </main>
+
+    <script>
+        const deletedList = document.getElementById('deletedList');
+
+        async function loadDeletedStudents() {
+            const res = await fetch('/api/deleted-students');
+            const students = await res.json();
+
+            deletedList.innerHTML = '';
+
+            if (students.length === 0) {
+                deletedList.innerHTML = '<tr><td colspan="3">Inga raderade studenter att visa.</td></tr>';
+                return;
+            }
+
+            students.forEach(student => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${student.name}</td>
+                    <td>${student.deletedAt}</td>
+                    <td>
+                        <button class="restore-btn" data-filename="${student.filename}">Återställ</button>
+                    </td>
+                `;
+                deletedList.appendChild(tr);
+            });
+        }
+
+        deletedList.addEventListener('click', async (e) => {
+            if (!e.target.matches('.restore-btn')) return;
+
+            const btn = e.target;
+            const filename = btn.dataset.filename;
+
+            if (confirm(`Är du säker på att du vill återställa denna student?`)) {
+                const res = await fetch('/api/students/restore', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ filename })
+                });
+
+                if (res.ok) {
+                    alert('Studenten har återställts!');
+                    loadDeletedStudents(); // Refresh the list
+                } else {
+                    const { error } = await res.json();
+                    alert(`Kunde inte återställa studenten: ${error}`);
+                }
+            }
+        });
+
+        loadDeletedStudents();
+    </script>
+</body>
+</html>

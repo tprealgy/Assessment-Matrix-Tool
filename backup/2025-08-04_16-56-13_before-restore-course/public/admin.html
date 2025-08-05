@@ -1,0 +1,73 @@
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hantera Bedömningsområden</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="breadcrumb.js"></script>
+  <script src="admin.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="course-title">Hantera Bedömningsområden</h1>
+    <nav></nav>
+  </header>
+
+  <main class="admin-main">
+    <div class="admin-section">
+      <h2>Hantera Studenter</h2>
+      <ul id="studentList" class="item-list"></ul>
+      <div class="add-item-form">
+        <h3>Lägg till ny student</h3>
+        <input type="text" id="newStudentName" placeholder="Studentens namn" />
+        <button id="addStudentBtn">Lägg till student</button>
+        <div style="margin-top: 1rem;">
+          <a href="#" id="restore-link" class="button-like">Återställ Student</a>
+        </div>
+      </div>
+      <div id="backupPanel" class="add-item-form">
+        <h3>Säkerhetskopiering & Import</h3>
+        <p>Exportera all studentdata till en JSON-fil för säkerhetskopiering. Importera från en sådan fil för att återställa eller lägga till studenter.</p>
+        <a id="export-link" href="/api/students/export" class="button-like">Exportera Allt</a>
+        <div class="import-section">
+            <label for="importFile">Importera från fil:</label>
+            <input type="file" id="importFile" accept=".json">
+            <button id="importBtn">Importera</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>Hantera Bedömningsområden</h2>
+      <ul id="areaList" class="item-list"></ul>
+      <div class="add-item-form">
+        <h3>Lägg till nytt område</h3>
+        <input type="text" id="newAreaName" placeholder="Kort namn (t.ex. Planering)" />
+        <textarea id="newAreaDesc" placeholder="Fullständig beskrivning..."></textarea>
+        <button id="addAreaBtn">Lägg till område</button>
+      </div>
+    </div>
+
+    <div class="admin-section">
+      <h2>Kursinställningar</h2>
+      <div class="add-item-form">
+        <label for="courseDisplayName">Visningsnamn:</label>
+        <input type="text" id="courseDisplayName" placeholder="T.ex. Programmering 101" />
+        <label>Välj färg:</label>
+        <div id="colorPalette" style="display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px;"></div>
+        <button id="saveCourseSettingsBtn">Spara inställningar</button>
+      </div>
+    </div>
+
+    <div class="admin-section danger-zone">
+      <h2>Danger Zone</h2>
+      <p>Den här åtgärden kan inte ångras. All data för den här kursen kommer att raderas permanent.</p>
+      <button id="delete-course-btn" class="danger">Ta bort den här kursen</button>
+    </div>
+  </main>
+
+  <div id="toastNotification" class="toast-notification"></div>
+
+
+</body>
+</html>

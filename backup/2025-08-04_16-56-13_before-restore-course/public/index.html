@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bedömningsmatris</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="breadcrumb.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="course-title">Bedömningsmatris</h1>
+    <nav></nav>
+  </header>
+
+  <label for="studentSelect">Välj student:</label>
+  <select id="studentSelect">
+    <option value="">-- Välj en student --</option>
+  </select>
+
+  <div id="studentSection" style="display:none;">
+    <h2 id="studentName">Student</h2>
+
+    <div id="addAssignmentForm">
+      <h3 class="form-title">Lägg till uppgift</h3>
+      <input type="text" id="assignmentInput" placeholder="Uppgiftsnamn"/>
+      <div class="select-wrapper">
+        <label for="areaSelect">Bedömningsområden (Ctrl-klicka för flera)</label>
+        <select id="areaSelect" multiple>
+          <!-- Populated by JS -->
+        </select>
+      </div>
+      <div class="select-wrapper" id="levelAndColorContainer">
+        <label>Nivå och Färg</label>
+        <!-- Populated by JS -->
+      </div>
+      <button id="addAssignmentBtn">Lägg till uppgift</button>
+    </div>
+
+    <h3>Bedömningsmatris</h3>
+    <div id="godModePanel">
+      <h4>God Mode</h4>
+      <div>
+        <input type="checkbox" id="noConfirmDelete">
+        <label for="noConfirmDelete">Ta bort uppgifter utan bekräftelse</label>
+      </div>
+      <button id="deleteAllAssignmentsBtn" class="danger">Radera alla uppgifter för denna student</button>
+
+    </div>
+
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Bedömningsområde</th>
+          <th>E</th>
+          <th>C</th>
+          <th>A</th>
+        </tr>
+      </thead>
+      <tbody id="matrixBody">
+        <!-- Dynamiskt innehåll -->
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Edit Assignment Modal -->
+  <div id="editAssignmentModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="editModalTitle">Redigera Uppgift</h3>
+        <button id="closeEditModalBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="select-wrapper" id="editLevelAndColorContainer">
+          <!-- Populated by JS when modal opens -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelEditBtn" class="secondary">Avbryt</button>
+        <button id="saveEditBtn">Spara ändringar</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

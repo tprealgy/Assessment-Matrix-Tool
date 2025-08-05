@@ -1,0 +1,1023 @@
+[
+  {
+    "id": "d6268a36-4a0e-420d-8cd4-8be85fcb903f",
+    "name": "Kalle",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "9e036e9c-be95-484f-93da-1b3fd5d79f18",
+    "name": "Alice",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "a",
+            "color": "green",
+            "createdAt": "2025-08-04T15:40:14.247Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "grades": {
+          "E": "green",
+          "C": "green",
+          "A": "green"
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": "yellow",
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "grades": {
+          "E": "green",
+          "C": "green",
+          "A": "green"
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": "yellow",
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": "green",
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "7b5a3377-5e29-442b-8b88-2e87d2581173",
+    "name": "Bob",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          },
+          {
+            "name": "Small test",
+            "color": "green",
+            "createdAt": "2025-08-01T15:31:49.548Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "red",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "red",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "red",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "a",
+            "color": "red",
+            "createdAt": "2025-08-04T15:45:15.944Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "red",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "abc",
+            "color": "green",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "C": [
+          {
+            "name": "abc",
+            "color": "yellow",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "A": [
+          {
+            "name": "abc",
+            "color": "red",
+            "createdAt": "2025-08-04T14:50:24.303Z"
+          }
+        ],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ],
+    "hidden": false
+  },
+  {
+    "id": "e5e5edbf-42b5-4989-9072-2d7206b7dc21",
+    "name": "dwdwd",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": []
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": []
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": []
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": []
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": []
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "170a9a61-f4ce-41f5-a7dd-c044dc8dd83b",
+    "name": "tester1",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          },
+          {
+            "name": "aa",
+            "color": "green",
+            "createdAt": "2025-08-02T12:33:48.459Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          },
+          {
+            "name": "föralla",
+            "color": "grey",
+            "createdAt": "2025-08-04T15:17:21.286Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  },
+  {
+    "id": "07018f22-be24-463b-b28d-f0a3c201480c",
+    "name": "aaaa",
+    "assignments": [
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      },
+      {
+        "E": [
+          {
+            "name": "abc",
+            "color": "grey",
+            "createdAt": "2025-08-04T16:23:15.645Z"
+          }
+        ],
+        "C": [],
+        "A": [],
+        "grades": {
+          "E": null,
+          "C": null,
+          "A": null
+        }
+      }
+    ]
+  }
+]

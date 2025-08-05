@@ -1,0 +1,119 @@
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hantera Bedömningsområden</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="config.js"></script>
+  <script src="utils/api.js">
+  <script src="utils/validation.js"></script>
+  <script src="utils/ui.js"></script>
+  <script src="data/courses.js"></script>
+  <script src="data/students.js"></script>
+  <script src="data/assessmentAreas.js"></script>
+  <script src="breadcrumb.js"></script>
+  <script src="help.js"></script>
+  <script src="electron-fix.js"></script>
+  <script src="admin.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="course-title">Hantera Bedömningsområden</h1>
+    <nav></nav>
+  </header>
+
+  <main class="admin-main">
+    <!-- Students Section -->
+    <section class="admin-card">
+      <div class="card-header">
+        <h2>👥 Studenter</h2>
+        <div class="header-actions">
+          <a href="#" id="restore-link" class="btn btn-secondary">Återställ</a>
+        </div>
+      </div>
+      
+      <div class="student-list-container">
+        <ul id="studentList" class="modern-list"></ul>
+      </div>
+      
+      <div class="form-section">
+        <h3>Lägg till student</h3>
+        <div class="input-group">
+          <input type="text" id="newStudentName" placeholder="Ange studentens fullständiga namn" class="form-input" />
+          <button id="addStudentBtn" class="btn btn-primary">Lägg till</button>
+        </div>
+      </div>
+      
+      <div class="backup-section">
+        <h3>Backup & Import</h3>
+        <div class="backup-actions">
+          <a id="export-link" href="/api/students/export" class="btn btn-success">Exportera data</a>
+          <div class="file-upload-area">
+            <input type="file" id="importFile" accept=".json" class="file-input">
+            <button id="importBtn" class="btn btn-success">Importera</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Assessment Areas Section -->
+    <section class="admin-card">
+      <div class="card-header">
+        <h2>📊 Bedömningsområden</h2>
+      </div>
+      
+      <div class="areas-container">
+        <ul id="areaList" class="areas-list"></ul>
+      </div>
+      
+      <div class="form-section">
+        <h3>Skapa nytt område</h3>
+        <div class="form-group">
+          <label for="newAreaName">Namn på område</label>
+          <input type="text" id="newAreaName" placeholder="t.ex. Planering, Genomförande, Reflektion" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label for="newAreaDesc">Beskrivning</label>
+          <textarea id="newAreaDesc" placeholder="Detaljerad beskrivning av vad som bedöms inom detta område..." class="form-textarea"></textarea>
+        </div>
+        <button id="addAreaBtn" class="btn btn-primary">Skapa område</button>
+      </div>
+    </section>
+
+    <!-- Course Settings Section -->
+    <section class="admin-card">
+      <div class="card-header">
+        <h2>⚙️ Kursinställningar</h2>
+      </div>
+      
+      <div class="form-section">
+        <div class="form-group">
+          <label for="courseDisplayName">Kursnamn</label>
+          <input type="text" id="courseDisplayName" placeholder="t.ex. Programmering 1, Matematik A" class="form-input" />
+        </div>
+        <div class="form-group">
+          <label>Kursfärg</label>
+          <div id="colorPalette" class="color-palette"></div>
+        </div>
+        <button id="saveCourseSettingsBtn" class="btn btn-primary">Spara ändringar</button>
+      </div>
+    </section>
+
+    <!-- Danger Zone -->
+    <section class="admin-card danger-card">
+      <div class="card-header">
+        <h2>⚠️ Farlig zon</h2>
+      </div>
+      
+      <div class="danger-content">
+        <p>Denna åtgärd raderar <strong>all kursdata permanent</strong> och kan inte ångras.</p>
+        <button id="delete-course-btn" class="btn btn-danger">Radera hela kursen</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toastNotification" class="toast-notification"></div>
+
+
+</body>
+</html>
