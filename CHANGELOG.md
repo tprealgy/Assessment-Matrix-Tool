@@ -2,6 +2,17 @@
 
 All notable changes to the Assessment Matrix Tool will be documented in this file.
 
+## [0.9.2-beta] - 2025-01-16
+
+### 🐛 Bug Fixes
+- **Assessment Area Editing**: Fixed missing API endpoints in Electron build
+  - Added PUT `/api/assessment-areas/:index` endpoint to electron-server.js
+  - Added DELETE `/api/assessment-areas/:index` endpoint to electron-server.js
+  - Added POST `/api/assessment-areas/reorder` endpoint to electron-server.js
+  - Assessment area editing now works properly in the built application (port 3001)
+
+---
+
 ## [0.9.1-beta] - 2025-01-16
 
 ### 🐛 Bug Fixes

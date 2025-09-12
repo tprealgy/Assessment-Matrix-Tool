@@ -1,6 +1,6 @@
 {
   "name": "assessment-matrix-tool",
-  "version": "0.9.1-beta",
+  "version": "0.9.2-beta",
   "description": "A desktop application for managing student assessments and grading matrices",
   "main": "electron.js",
   "scripts": {
