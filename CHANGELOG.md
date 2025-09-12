@@ -2,6 +2,25 @@
 
 All notable changes to the Assessment Matrix Tool will be documented in this file.
 
+## [0.9.1-beta] - 2025-01-16
+
+### 🐛 Bug Fixes
+- **Assessment Area Management**: Fixed missing API endpoints for editing assessment areas
+  - Added PUT `/api/assessment-areas/:index` for updating area names and descriptions
+  - Added DELETE `/api/assessment-areas/:index` for removing assessment areas
+  - Added POST `/api/assessment-areas/reorder` for reordering areas
+  - Assessment area names can now be edited and saved properly in admin interface
+- **Application Startup**: Improved VBS launcher script
+  - Now kills processes using port 3000 before starting (safer than killing all Node processes)
+  - Prevents conflicts from previous server instances
+  - Ensures latest code changes are always loaded
+
+### 🔧 Technical Improvements
+- **Error Handling**: Added proper error handling and user feedback for assessment area operations
+- **Toast Notifications**: Enhanced admin interface with success/error messages for area management
+
+---
+
 ## [0.9.0-beta] - 2025-01-15
 
 ### ✨ New Features

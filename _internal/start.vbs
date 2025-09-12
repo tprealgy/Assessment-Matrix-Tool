@@ -3,6 +3,12 @@
 
 Set WshShell = CreateObject("WScript.Shell")
 
+' Kill any process using port 3000 to prevent conflicts
+WshShell.Run "cmd /c netstat -ano | findstr :3000 | for /f ""tokens=5"" %a in ('more') do taskkill /f /pid %a", 0, true
+
+' Wait a moment for processes to close
+WScript.Sleep 2000
+
 ' Run the server using npm start in a hidden window.
 ' The '0' parameter hides the command window.
 ' The 'false' parameter makes the script continue without waiting for the command to finish.

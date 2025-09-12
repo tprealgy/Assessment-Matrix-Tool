@@ -242,8 +242,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (btn.classList.contains('deleteBtn')) {
       if (confirm('Är du säker på att du vill ta bort detta område? All data för detta område kommer att raderas för samtliga elever.')) {
-        await fetch(`/api/assessment-areas/${index}?course=${courseName}`, { method: 'DELETE' });
-        loadAreas();
+        try {
+          const res = await fetch(`/api/assessment-areas/${index}?course=${courseName}`, { method: 'DELETE' });
+          if (res.ok) {
+            showToast('Område borttaget!');
+            loadAreas();
+          } else {
+            showToast('Kunde inte ta bort området.', true);
+            console.error('Delete failed:', res.status, res.statusText);
+          }
+        } catch (error) {
+          showToast('Fel vid borttagning.', true);
+          console.error('Delete error:', error);
+        }
       }
     } else if (btn.classList.contains('moveUpBtn')) {
       if (index > 0) {
@@ -279,11 +290,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const description = descInput.value.trim();
 
     if (name) {
-      await fetch(`/api/assessment-areas/${index}?course=${courseName}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, description })
-      });
+      try {
+        const res = await fetch(`/api/assessment-areas/${index}?course=${courseName}`, {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, description })
+        });
+        if (res.ok) {
+          showToast('Område uppdaterat!');
+        } else {
+          showToast('Kunde inte uppdatera området.', true);
+          console.error('Update failed:', res.status, res.statusText);
+        }
+      } catch (error) {
+        showToast('Fel vid uppdatering.', true);
+        console.error('Update error:', error);
+      }
     } else {
       showToast('Områdesnamnet får inte vara tomt.', true);
       loadAreas();

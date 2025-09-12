@@ -445,6 +445,105 @@ app.post('/api/assessment-areas', async (req, res) => {
   }
 });
 
+app.put('/api/assessment-areas/:index', async (req, res) => {
+  const courseName = req.query.course;
+  const index = parseInt(req.params.index);
+  const { name, description } = req.body;
+  if (!courseName) return res.status(400).json({ error: 'Course name is required' });
+  if (!name) return res.status(400).json({ error: 'Name is required' });
+
+  try {
+    const course = await database.get('SELECT id FROM courses WHERE name = ?', [courseName]);
+    if (!course) return res.status(404).json({ error: 'Course not found' });
+
+    const area = await database.get(`
+      SELECT id FROM assessment_areas 
+      WHERE course_id = ? 
+      ORDER BY sort_order 
+      LIMIT 1 OFFSET ?
+    `, [course.id, index]);
+
+    if (!area) return res.status(404).json({ error: 'Assessment area not found' });
+
+    await database.run(
+      'UPDATE assessment_areas SET name = ?, description = ? WHERE id = ?',
+      [name, description || '', area.id]
+    );
+
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Failed to update assessment area:', error);
+    res.status(500).json({ error: 'Could not update assessment area.' });
+  }
+});
+
+app.delete('/api/assessment-areas/:index', async (req, res) => {
+  const courseName = req.query.course;
+  const index = parseInt(req.params.index);
+  if (!courseName) return res.status(400).json({ error: 'Course name is required' });
+
+  try {
+    const course = await database.get('SELECT id FROM courses WHERE name = ?', [courseName]);
+    if (!course) return res.status(404).json({ error: 'Course not found' });
+
+    const area = await database.get(`
+      SELECT id FROM assessment_areas 
+      WHERE course_id = ? 
+      ORDER BY sort_order 
+      LIMIT 1 OFFSET ?
+    `, [course.id, index]);
+
+    if (!area) return res.status(404).json({ error: 'Assessment area not found' });
+
+    await database.run('DELETE FROM assessment_areas WHERE id = ?', [area.id]);
+
+    res.status(204).send();
+  } catch (error) {
+    console.error('Failed to delete assessment area:', error);
+    res.status(500).json({ error: 'Could not delete assessment area.' });
+  }
+});
+
+app.post('/api/assessment-areas/reorder', async (req, res) => {
+  const courseName = req.query.course;
+  const { from, to } = req.body;
+  if (!courseName) return res.status(400).json({ error: 'Course name is required' });
+  if (from === undefined || to === undefined) return res.status(400).json({ error: 'From and to indices are required' });
+
+  try {
+    const course = await database.get('SELECT id FROM courses WHERE name = ?', [courseName]);
+    if (!course) return res.status(404).json({ error: 'Course not found' });
+
+    const areas = await database.all(`
+      SELECT id, sort_order FROM assessment_areas 
+      WHERE course_id = ? 
+      ORDER BY sort_order
+    `, [course.id]);
+
+    if (from < 0 || from >= areas.length || to < 0 || to >= areas.length) {
+      return res.status(400).json({ error: 'Invalid indices' });
+    }
+
+    // Swap the sort_order values
+    const fromArea = areas[from];
+    const toArea = areas[to];
+
+    await database.run(
+      'UPDATE assessment_areas SET sort_order = ? WHERE id = ?',
+      [toArea.sort_order, fromArea.id]
+    );
+    await database.run(
+      'UPDATE assessment_areas SET sort_order = ? WHERE id = ?',
+      [fromArea.sort_order, toArea.id]
+    );
+
+    res.status(200).json({ success: true });
+  } catch (error) {
+    console.error('Failed to reorder assessment areas:', error);
+    res.status(500).json({ error: 'Could not reorder assessment areas.' });
+  }
+});
+
 // Assignment Routes
 app.post('/api/students/:id/assignments', async (req, res) => {
   const courseName = req.query.course;
@@ -858,4 +957,5 @@ app.post('/api/assignments/bulk', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
   console.log('🗄️ Using SQLite database');
+  console.log('✅ Assessment area endpoints loaded');
 });
