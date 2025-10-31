@@ -1,0 +1,254 @@
+/* Assignment Components */
+
+/* Assignment Form */
+#addAssignmentForm {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-template-rows: auto auto auto;
+  gap: var(--spacing-md);
+  background-color: var(--bg-primary);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-xl);
+  border: 1px solid #e1e4e8;
+  box-shadow: var(--shadow-sm);
+  align-items: start;
+}
+
+.form-title {
+  grid-column: 1 / -1;
+  margin: 0 0 var(--spacing-sm) 0;
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid #e1e4e8;
+  font-size: 1.25rem;
+  color: var(--text-primary);
+}
+
+#addAssignmentForm input[type="text"] {
+  grid-column: 1;
+  grid-row: 2;
+  min-width: 200px;
+}
+
+.select-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-wrapper label {
+  font-size: 0.8rem;
+  margin-bottom: var(--spacing-xs);
+  color: #586069;
+  font-weight: 600;
+}
+
+#areaSelect[multiple] {
+  display: none;
+}
+
+.area-checkbox-container {
+  grid-column: 2;
+  grid-row: 2;
+  min-width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 2px solid var(--gray-200);
+  border-radius: 6px;
+  background: white;
+  padding: var(--spacing-sm);
+}
+
+.area-checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: 0.3rem 0;
+  font-size: 0.9rem;
+}
+
+.area-checkbox-item input[type="checkbox"] {
+  margin: 0;
+  padding: 0;
+}
+
+.area-checkbox-item label {
+  margin: 0;
+  cursor: pointer;
+  flex: 1;
+  font-weight: normal;
+  color: var(--text-secondary);
+}
+
+/* Level & Color Selector */
+#levelAndColorContainer, #editLevelAndColorContainer {
+  grid-column: 3;
+  grid-row: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background-color: var(--gray-100);
+  padding: var(--spacing-sm);
+  border: 1px solid #d1d5da;
+  border-radius: 6px;
+  min-width: 200px;
+}
+
+.level-color-row {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.level-label {
+  min-width: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.color-swatch-group {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.assignment-buttons {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: flex-end;
+  margin-top: var(--spacing-sm);
+}
+
+/* Color Swatches */
+.color-swatch {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  opacity: 0.5;
+}
+
+.color-swatch:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.color-swatch.active {
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 0 0 3px var(--primary-color);
+}
+
+/* Color Definitions */
+#levelAndColorContainer .color-swatch[data-color="green"],
+#editLevelAndColorContainer .color-swatch[data-color="green"] {
+  background-color: var(--grade-green) !important;
+}
+
+#levelAndColorContainer .color-swatch[data-color="yellow"],
+#editLevelAndColorContainer .color-swatch[data-color="yellow"] {
+  background-color: var(--grade-yellow) !important;
+}
+
+#levelAndColorContainer .color-swatch[data-color="red"],
+#editLevelAndColorContainer .color-swatch[data-color="red"] {
+  background-color: var(--grade-red) !important;
+}
+
+.color-swatch.green { background-color: var(--grade-green); }
+.color-swatch.yellow { background-color: var(--grade-yellow); }
+.color-swatch.red { background-color: var(--grade-red); }
+.color-swatch.grey { background-color: var(--grade-grey); }
+
+/* Assignment Chips */
+.assignment-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-sm);
+}
+
+.assignment-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  position: relative;
+  z-index: 2;
+}
+
+.assignment-chip {
+  flex-grow: 1;
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  line-height: 1.4;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.assignment-chip.green { background-color: var(--grade-green); color: white; }
+.assignment-chip.yellow { background-color: var(--grade-yellow); color: var(--gray-800); }
+.assignment-chip.red { background-color: var(--grade-red); color: white; }
+.assignment-chip.grey { background-color: var(--grade-grey); color: white; }
+
+.delete-assignment-btn {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 0 var(--spacing-xs);
+  cursor: pointer;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.delete-assignment-btn:hover {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+/* Cell Grading Controls */
+.cell-grade-controls {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  display: flex;
+  gap: 3px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 3px;
+  border-radius: var(--radius-lg);
+  z-index: 1;
+}
+
+#matrixBody td:hover .cell-grade-controls {
+  opacity: 1;
+}
+
+.grade-btn {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid rgba(0,0,0,0.2);
+  padding: 0;
+  cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.grade-btn[data-grade="green"] { background-color: var(--grade-green); }
+.grade-btn[data-grade="yellow"] { background-color: var(--grade-yellow); }
+.grade-btn[data-grade="grey"] { background-color: var(--grade-grey); }
+.grade-btn.clear {
+  background-color: #fff;
+  color: #777;
+  font-size: 14px;
+  line-height: 16px;
+}

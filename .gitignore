@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+
+# Build outputs
+dist/
+build/
+*.exe
+*.zip
+builder-debug.yml
+
+# Development data (don't commit user data)
+data/
+*.db
+*.db-journal
+
+# Development files
+backup/
+data_backup_*/
+notes.md
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+
+# Electron builder cache
+.electron-builder-cache/
+
+# Temporary folders
+tmp/
+temp/

@@ -1,0 +1,100 @@
+/* Table Components */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+  background-color: var(--bg-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+th, td {
+  padding: 0.75rem;
+  border: 1px solid var(--gray-200);
+  text-align: center;
+}
+
+th {
+  background: linear-gradient(135deg, var(--gray-100) 0%, var(--gray-200) 100%);
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--gray-100);
+}
+
+tbody tr:hover {
+  background: #e3f2fd;
+}
+
+/* Matrix Table Specific */
+#matrixBody td {
+  position: relative;
+  vertical-align: top;
+  text-align: left;
+}
+
+#matrixBody td:not(:first-child) {
+  padding-right: 95px;
+}
+
+/* Cell Grade Colors */
+td.cell-green { background-color: #e9f7ef; }
+td.cell-yellow { background-color: #fff9e6; }
+td.cell-grey { background-color: #f1f2f6; }
+
+td.green { background-color: #d4edda; color: #155724; }
+td.yellow { background-color: #fff3cd; color: #856404; }
+td.red { background-color: #f8d7da; color: #721c24; }
+td.grey { background-color: var(--gray-200); color: #383d41; }
+td.empty-cell { background-color: var(--gray-100); }
+
+td span {
+  display: inline-block;
+  min-width: 80px;
+}
+
+/* Restore Table */
+.restore-table {
+  max-width: 600px;
+}
+
+.restore-table th, .restore-table td {
+  padding: 0.75rem var(--spacing-md);
+  vertical-align: middle;
+}
+
+.restore-table th {
+  text-align: left;
+}
+
+.restore-table td:nth-child(2) {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.restore-table td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+
+.restore-table .restore-btn {
+  background: linear-gradient(135deg, var(--success-color), var(--success-light));
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(40, 167, 69, 0.2);
+}
+
+.restore-table .restore-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(40, 167, 69, 0.3);
+}

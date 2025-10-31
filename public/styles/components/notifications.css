@@ -1,0 +1,38 @@
+/* Notification Components */
+
+/* Toast Notifications */
+.toast-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--gray-800);
+  color: white;
+  padding: 10px 20px;
+  border-radius: var(--radius-sm);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 1000;
+}
+
+.toast-notification.show {
+  opacity: 1;
+}
+
+/* God Mode Panel */
+#godModePanel {
+  border: 2px dashed var(--danger-color);
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
+  border-radius: var(--radius-sm);
+  background-color: #fbeee6;
+}
+
+#godModePanel h4 {
+  margin-top: 0;
+  color: #c0392b;
+}
+
+#godModePanel div {
+  margin-bottom: var(--spacing-sm);
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Välj kurs</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="landing.css" />
+  <script src="config.js"></script>
+  <script src="utils/api.js"></script>
+  <script src="utils/validation.js"></script>
+  <script src="utils/ui.js"></script>
+  <script src="data/courses.js"></script>
+  <script src="breadcrumb.js"></script>
+  <script src="help.js"></script>
+  <script src="electron-fix.js"></script>
+  <script src="landing.js"></script>
+
+</head>
+<body>
+  <div class="admin-main" style="grid-template-columns: 1fr;">
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>📚 Välj en kurs</h2>
+        <div class="header-actions">
+          <button class="btn btn-secondary" id="settings-btn" title="Inställningar">⚙️</button>
+          <button class="btn btn-primary" id="open-modal-btn">Skapa kurs</button>
+        </div>
+      </div>
+      <div style="padding: 1rem 2rem 2rem;">
+        <ul id="course-list" class="modern-list">
+          <!-- Kurser listas här -->
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Create Course Modal -->
+  <div id="course-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close-modal">&times;</span>
+      <h2>Skapa ny kurs</h2>
+      <div class="modal-form">
+        <input type="text" id="new-course-name" placeholder="Namn på ny kurs" />
+        <button id="create-course-btn">Skapa kurs</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Settings Modal -->
+  <div id="settings-modal" class="modal">
+    <div class="modal-content settings-modal">
+      <span class="close" id="close-settings">&times;</span>
+      <h2>Inställningar</h2>
+      <div class="settings-content">
+        <h3>Appinställningar</h3>
+        <p>Anpassa appens färger, gränsvärden och beteende.</p>
+        <div style="margin-bottom: 2rem;">
+          <a href="/settings.html" class="btn btn-primary">Öppna inställningar</a>
+        </div>
+        
+        <h3>Återställ raderade kurser</h3>
+        <p class="cleanup-info">Kurser raderas automatiskt efter 6 månader.</p>
+        <div id="deleted-courses-list">
+          <!-- Populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>

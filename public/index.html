@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bedömningsmatris</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <script src="config.js"></script>
+  <script src="utils/api.js"></script>
+  <script src="utils/validation.js"></script>
+  <script src="utils/ui.js"></script>
+  <script src="data/students.js"></script>
+  <script src="data/assignments.js"></script>
+  <script src="data/assessmentAreas.js"></script>
+  <script src="breadcrumb.js"></script>
+  <script src="help.js"></script>
+  <script src="electron-fix.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <header>
+    <h1 id="course-title">Bedömningsmatris</h1>
+    <nav></nav>
+  </header>
+
+  <div class="admin-main" style="grid-template-columns: 1fr;">
+    <div class="admin-card">
+      <div class="card-header">
+        <h2>👤 Välj Student</h2>
+      </div>
+      <div class="form-section">
+        <div class="form-group">
+          <label for="studentSelect">Välj student:</label>
+          <select id="studentSelect" class="form-input">
+            <option value="">-- Välj en student --</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="studentSection" style="display:none;">
+    <div class="admin-main" style="grid-template-columns: 1fr;">
+      <div class="admin-card">
+        <div class="card-header">
+          <h2 id="studentName">📝 Student</h2>
+        </div>
+        <div class="form-section">
+          <div id="addAssignmentForm">
+            <h3 class="form-title">Lägg till uppgift</h3>
+            <input type="text" id="assignmentInput" class="form-input" placeholder="Uppgiftsnamn"/>
+            <div class="select-wrapper">
+              <label for="areaSelect">Bedömningsområden</label>
+              <select id="areaSelect" multiple class="form-input">
+                <!-- Populated by JS -->
+              </select>
+            </div>
+            <div class="select-wrapper" id="levelAndColorContainer">
+              <label>Nivå och Färg</label>
+              <!-- Populated by JS -->
+            </div>
+            <div class="assignment-buttons">
+              <button id="addAssignmentBtn" class="btn btn-primary">Lägg till uppgift</button>
+              <button id="addBulkAssignmentBtn" class="btn btn-success">Skapa för alla studenter</button>
+              <button id="undoLastAssignmentBtn" class="btn btn-warning">Ångra senaste uppgift</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-card">
+        <div class="card-header">
+          <h2>📊 Bedömningsmatris</h2>
+        </div>
+        <div class="form-section">
+          <div id="godModePanel">
+            <h4>God Mode</h4>
+            <div>
+              <input type="checkbox" id="noConfirmDelete">
+              <label for="noConfirmDelete">Ta bort uppgifter utan bekräftelse</label>
+            </div>
+            <button id="deleteAllAssignmentsBtn" class="btn btn-danger">Radera alla uppgifter för denna student</button>
+          </div>
+
+          <table border="1">
+            <thead>
+              <tr>
+                <th>Bedömningsområde</th>
+                <th>E</th>
+                <th>C</th>
+                <th>A</th>
+              </tr>
+            </thead>
+            <tbody id="matrixBody">
+              <!-- Dynamiskt innehåll -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Edit Assignment Modal -->
+  <div id="editAssignmentModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="editModalTitle">Redigera Uppgift</h3>
+        <button id="closeEditModalBtn" class="close-btn">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="select-wrapper" id="editLevelAndColorContainer">
+          <!-- Populated by JS when modal opens -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="cancelEditBtn" class="secondary">Avbryt</button>
+        <button id="saveEditBtn">Spara ändringar</button>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
