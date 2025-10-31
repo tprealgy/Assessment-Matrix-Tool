@@ -18,6 +18,7 @@ data/
 backup/
 data_backup_*/
 notes.md
+.amazonq/
 
 # OS generated files
 .DS_Store
