@@ -20,6 +20,13 @@ data_backup_*/
 notes.md
 .amazonq/
 _internal/
+create_backup.bat
+Grader.lnk
+BUILD_RELEASE.md
+RELEASE_TEMPLATE.md
+RELEASE.md
+UPDATE_GUIDE.md
+CHANGELOG.md
 
 # OS generated files
 .DS_Store
